@@ -86,10 +86,3 @@ function displayFU() {
 
 // Display the cat.gif initially
 displayCat();
-
-
-// Display the cat.gif initially
-displayCat();
-
-// Display the cat.gif initially
-displayCat();
