@@ -1,6 +1,6 @@
-// script.js
 let noClickCount = 0;
 
+// Function to handle button click events
 function selectOption(option) {
     if (option === 'yes') {
         flashRainbowColors(function() {
@@ -86,11 +86,8 @@ function displayFU() {
     };
 }
 
+// Display the cat.gif initially
 displayCat();
-
-        document.getElementById('options').style.display = 'none';
-    };
-}
 
 // Display the cat.gif initially
 displayCat();
