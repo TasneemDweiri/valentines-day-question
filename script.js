@@ -73,6 +73,7 @@ function displayCatHeart() {
 
 function displayFU() {
     document.getElementById('question').style.display = 'none';
+    document.getElementById('options').style.display = 'none';
     document.getElementById('image-container').innerHTML = '';
     var imageContainer = document.getElementById('image-container');
     
@@ -82,6 +83,15 @@ function displayFU() {
     fuText.style.fontWeight = 'bold';
     fuText.style.textAlign = 'center';
     imageContainer.appendChild(fuText);
+    
+    var fuImage = new Image();
+    fuImage.src = 'finger.gif';
+    fuImage.alt = 'Middle finger';
+    fuImage.style.display = 'block';
+    fuImage.style.margin = '10px auto'; 
+    fuImage.onload = function() {
+        imageContainer.appendChild(fuImage);
+    };
 } 
 
 // Display the cat.gif initially
