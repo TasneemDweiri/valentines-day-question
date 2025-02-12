@@ -12,6 +12,9 @@ function selectOption(option) {
         var noButton = document.getElementById('no-button');
         var yesButton = document.getElementById('yes-button');
         
+        noButton.style.fontWeight = 'bold';
+        noButton.style.fontSize = 'inherit';
+
         if (noClickCount === 1) {
             noButton.innerText = 'You sure?';
         } else if (noClickCount === 2) {
@@ -47,6 +50,7 @@ function flashRainbowColors(callback) {
 
 function displayCat() {
     var imageContainer = document.getElementById('image-container');
+    imageContainer.innerHTML = '';
     var catImage = new Image();
     catImage.src = 'cat.gif';
     catImage.alt = 'Cat';
@@ -68,23 +72,21 @@ function displayCatHeart() {
 }
 
 function displayFU() {
+    document.getElementById('question').style.display = 'none';
     document.getElementById('image-container').innerHTML = '';
     var imageContainer = document.getElementById('image-container');
     
     var fuText = document.createElement('p');
-    fuText.innerHTML = '<b>FUCK YOU</b>';
-    fuText.style.fontSize = '2em';
+    fuText.innerText = 'FUCK YOU';
+    fuText.style.fontSize = '15pt';
+    fuText.style.fontWeight = 'bold';
     fuText.style.textAlign = 'center';
     imageContainer.appendChild(fuText);
-    
-    var fuImage = new Image();
-    fuImage.src = 'finger.gif';
-    fuImage.alt = 'Fuck you';
-    fuImage.onload = function() {
-        imageContainer.appendChild(fuImage);
-        document.getElementById('options').style.display = 'none';
-    };
-}
+} 
+
+// Display the cat.gif initially
+displayCat();
+
 
 // Display the cat.gif initially
 displayCat();
