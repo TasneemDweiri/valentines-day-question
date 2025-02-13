@@ -4,7 +4,6 @@ let noClickCount = 0;
 var defaultSound = new Audio('defaultSound.mp3');
 defaultSound.loop = true;
 defaultSound.volume = 0.5;
-defaultSound.play().catch(error => console.log('Autoplay blocked:', error));
 
 var FUpageSound = new Audio('FUpageSound.mp3');
 FUpageSound.loop = true;
@@ -13,6 +12,11 @@ FUpageSound.volume = 0.5;
 var yesSound = new Audio('yesSound.mp3');
 yesSound.loop = true;
 yesSound.volume = 0.5;
+
+// Ensure default sound starts when the page loads
+document.addEventListener('DOMContentLoaded', function() {
+    defaultSound.play().catch(error => console.log('Autoplay blocked:', error));
+});
 
 // Function to handle button click events
 function selectOption(option) {
