@@ -13,9 +13,10 @@ var yesSound = new Audio('yesSound.mp3');
 yesSound.loop = true;
 yesSound.volume = 0.5;
 
-// Ensure default sound starts when the page loads
-document.addEventListener('DOMContentLoaded', function() {
+// Ensure default sound starts after user interaction
+document.addEventListener('click', function startDefaultSound() {
     defaultSound.play().catch(error => console.log('Autoplay blocked:', error));
+    document.removeEventListener('click', startDefaultSound); // Remove event listener after first click
 });
 
 // Function to handle button click events
