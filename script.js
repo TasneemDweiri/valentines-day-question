@@ -1,5 +1,15 @@
 let noClickCount = 0;
 
+// 🎵 Sound Setup
+var defaultSound = new Audio('defaultSound.mp3');
+defaultSound.loop = true;
+defaultSound.volume = 0.5;
+defaultSound.play().catch(error => console.log('Autoplay blocked:', error));
+
+var FUpageSound = new Audio('FUpageSound.mp3');
+FUpageSound.loop = true;
+FUpageSound.volume = 0.5;
+
 // Function to handle button click events
 function selectOption(option) {
     if (option === 'yes') {
@@ -75,8 +85,13 @@ function displayFU() {
     document.getElementById('question').style.display = 'none';
     document.getElementById('options').style.display = 'none';
     document.getElementById('image-container').innerHTML = '';
+
+    // 🛑 Stop default sound and play FU page sound
+    defaultSound.pause();
+    defaultSound.currentTime = 0;
+    FUpageSound.play().catch(error => console.log('Autoplay blocked:', error));
+
     var imageContainer = document.getElementById('image-container');
-    
     var fuText = document.createElement('p');
     fuText.innerText = 'FUCK YOU';
     fuText.style.fontSize = '15pt';
