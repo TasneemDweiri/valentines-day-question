@@ -5,7 +5,7 @@ var defaultSound = new Audio('default.mp3');
 defaultSound.loop = true;
 defaultSound.volume = 0.5;
 
-var FUpageSound = new Audio('FUpageSound.mp3');
+var FUpageSound = new Audio('FUpageSound2.mp3');
 FUpageSound.loop = true;
 FUpageSound.volume = 0.5;
 
