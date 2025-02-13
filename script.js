@@ -10,9 +10,16 @@ var FUpageSound = new Audio('FUpageSound.mp3');
 FUpageSound.loop = true;
 FUpageSound.volume = 0.5;
 
+var yesSound = new Audio('yesSound.mp3');
+yesSound.loop = true;
+yesSound.volume = 0.5;
+
 // Function to handle button click events
 function selectOption(option) {
     if (option === 'yes') {
+        defaultSound.pause();
+        defaultSound.currentTime = 0;
+        yesSound.play().catch(error => console.log('Autoplay blocked:', error));
         flashRainbowColors(function() {
             document.getElementById('question').style.display = 'none';
             displayCatHeart();
@@ -86,9 +93,11 @@ function displayFU() {
     document.getElementById('options').style.display = 'none';
     document.getElementById('image-container').innerHTML = '';
 
-    // 🛑 Stop default sound and play FU page sound
+    // 🛡️ Stop all other sounds and play FU page sound
     defaultSound.pause();
     defaultSound.currentTime = 0;
+    yesSound.pause();
+    yesSound.currentTime = 0;
     FUpageSound.play().catch(error => console.log('Autoplay blocked:', error));
 
     var imageContainer = document.getElementById('image-container');
