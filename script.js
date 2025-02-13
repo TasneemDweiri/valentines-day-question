@@ -1,7 +1,7 @@
 let noClickCount = 0;
 
 // 🎵 Sound Setup
-var defaultSound = new Audio('defaultSound.mp3');
+var defaultSound = new Audio('default.mp3');
 defaultSound.loop = true;
 defaultSound.volume = 0.5;
 
